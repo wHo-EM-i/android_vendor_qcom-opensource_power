@@ -46,14 +46,14 @@ void set_device_specific_feature(struct power_module *module __unused,
 #endif
 
 #ifdef TAP_TO_WAKE_NODE
-    if (feature == POWER_FEATURE_DOUBLE_TAP_TO_WAKE) {
+    if (feature == POWER_FEATURE_DOUBLE_TAP) {
         sysfs_write(TAP_TO_WAKE_NODE, tmp_str);
         return;
     }
 #endif
 
 #ifdef TAP_TO_WAKE_EVENT_NODE
-    if (feature == POWER_FEATURE_DOUBLE_TAP_TO_WAKE) {
+    if (feature == POWER_FEATURE_DOUBLE_TAP) {
             int fd = open(TAP_TO_WAKE_EVENT_NODE, O_RDWR);
             struct input_event ev;
             ev.type = EV_SYN;
@@ -66,7 +66,7 @@ void set_device_specific_feature(struct power_module *module __unused,
 #endif
 
 #ifdef SINGLE_TAP_TO_WAKE_NODE
-    if (feature == POWER_FEATURE_SINGLE_TAP_TO_WAKE) {
+    if (feature == POWER_FEATURE_SINGLE_TAP) {
         sysfs_write(SINGLE_TAP_TO_WAKE_NODE, tmp_str);
         return;
     }
