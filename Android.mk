@@ -92,6 +92,12 @@ LOCAL_CFLAGS += -Wno-unused-parameter -Wno-unused-variable
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 else
+
+ifneq ($(TARGET_POWERHAL_MODE_EXT),)
+    LOCAL_CFLAGS += -DMODE_EXT
+    LOCAL_SRC_FILES += ../../../../$(TARGET_POWERHAL_MODE_EXT)
+endif
+
 LOCAL_MODULE := android.hardware.power-service
 LOCAL_INIT_RC := android.hardware.power-service.rc
 LOCAL_MODULE_TAGS := optional
