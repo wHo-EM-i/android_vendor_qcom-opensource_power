@@ -55,12 +55,6 @@ ifeq ($(call is-board-platform-in-list,msm8998 apq8098_latv), true)
 LOCAL_SRC_FILES += power-8998.c
 endif
 
-ifeq ($(call is-board-platform-in-list,sdm660), true)
-ifneq ($(TARGET_KERNEL_VERSION), 4.19)
-LOCAL_SRC_FILES += power-660.c
-endif
-endif
-
 ifeq ($(call is-board-platform-in-list,sdm845), true)
 LOCAL_SRC_FILES += power-845.c
 endif
@@ -94,4 +88,3 @@ LOCAL_VENDOR_MODULE := true
 LOCAL_VINTF_FRAGMENTS := power.xml
 include $(BUILD_EXECUTABLE)
 endif
-
