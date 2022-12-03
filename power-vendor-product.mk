@@ -18,9 +18,7 @@ PRODUCT_COPY_FILES += vendor/qcom/opensource/power/config/holi/powerhint.xml:$(T
 else ifeq ($(TARGET_BOARD_PLATFORM),trinket)
 PRODUCT_COPY_FILES += vendor/qcom/opensource/power/config/trinket/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 else ifeq ($(TARGET_BOARD_PLATFORM),sdm660)
-ifeq ($(TARGET_KERNEL_VERSION),4.19)
 PRODUCT_COPY_FILES += vendor/qcom/opensource/power/config/sdm660/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
-endif
 else ifeq ($(TARGET_BOARD_PLATFORM),sm6150)
 PRODUCT_COPY_FILES += vendor/qcom/opensource/power/config/sm6150/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 else ifeq ($(TARGET_BOARD_PLATFORM),bengal)
